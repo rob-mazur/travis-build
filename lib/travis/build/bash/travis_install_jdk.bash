@@ -20,14 +20,13 @@ travis_install_jdk_package_adopt() { #packages from adoptopenjdk repo
   JAVA_VERSION="$1"
   sudo apt-get update -yqq
   PACKAGE="adoptopenjdk-${JAVA_VERSION}-hotspot"
-    wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
-    sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
-    sudo apt-get update -yqq
-    sudo apt-get -yqq --no-install-suggests --no-install-recommends install "$PACKAGE" || true
-    travis_cmd "export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-${JAVA_VERSION}-hotspot-${TRAVIS_CPU_ARCH}" --echo
-    travis_cmd 'export PATH="$JAVA_HOME/bin:$PATH"' --echo
-    sudo update-java-alternatives -s "$PACKAGE"*
-  fi
+  wget -qO - https://adoptopenjdk.jfrog.io/adoptopenjdk/api/gpg/key/public | sudo apt-key add -
+  sudo add-apt-repository --yes https://adoptopenjdk.jfrog.io/adoptopenjdk/deb/
+  sudo apt-get update -yqq
+  sudo apt-get -yqq --no-install-suggests --no-install-recommends install "$PACKAGE" || true
+  travis_cmd "export JAVA_HOME=/usr/lib/jvm/adoptopenjdk-${JAVA_VERSION}-hotspot-${TRAVIS_CPU_ARCH}" --echo
+  travis_cmd 'export PATH="$JAVA_HOME/bin:$PATH"' --echo
+  sudo update-java-alternatives -s "$PACKAGE"*
 }
 
 travis_install_jdk_package_amazon() { #packages from amazon repo 
