@@ -30,7 +30,7 @@ travis_install_jdk_package_adopt() { #packages from adoptopenjdk repo
   fi
 }
 
-travis_install_jdk_package_amazon() { #packages from amazon repo
+travis_install_jdk_package_amazon() { #packages from amazon repo 
 
   local JAVA_VERSION
   JAVA_VERSION="$1"
