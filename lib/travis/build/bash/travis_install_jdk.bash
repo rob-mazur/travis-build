@@ -6,7 +6,7 @@ travis_install_jdk() {
 
   case "$version" in
   12 | 13 | 14 | 16)
-    travis_install_jdk_package_adopt "$version"
+    travis_install_jdk_package_bellsoft "$version"
     ;;
   *)
     travis_install_jdk_package_amazon "$version"
