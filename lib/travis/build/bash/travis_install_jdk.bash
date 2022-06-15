@@ -14,8 +14,8 @@ travis_install_jdk() {
   esac
 }
 
-#packages from adoptopenjdk repo
-travis_install_jdk_package_adopt() {
+#packages from bellsoft repo
+travis_install_jdk_package_bellsoft() {
 
   local JAVA_VERSION
   JAVA_VERSION="$1"
