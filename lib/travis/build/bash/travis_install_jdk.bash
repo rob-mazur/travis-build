@@ -14,7 +14,8 @@ travis_install_jdk() {
   esac
 }
 
-travis_install_jdk_package_adopt() { #packages from adoptopenjdk repo
+#packages from adoptopenjdk repo
+travis_install_jdk_package_adopt() {
 
   local JAVA_VERSION
   JAVA_VERSION="$1"
