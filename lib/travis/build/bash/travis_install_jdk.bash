@@ -30,7 +30,8 @@ travis_install_jdk_package_bellsoft() {
   sudo update-java-alternatives -s "$PACKAGE"*
 }
 
-travis_install_jdk_package_amazon() { #packages from amazon repo 
+#packages from amazon repo 
+travis_install_jdk_package_amazon() { 
 
   local JAVA_VERSION
   JAVA_VERSION="$1"
